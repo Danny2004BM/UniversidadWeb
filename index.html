@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    
+    <body>
+        <!-- Botones de Navegación -->
+        <div class="botones-navegacion">
+            <!-- Este es el botón de Inicio, que irá en la parte superior de la página -->
+<button onclick="scrollToTop()" class="boton-inicio">Inicio</button>
+
+            <button onclick="scrollToSection('sobre-nosotros')">Sobre Nosotros</button>
+            <button onclick="scrollToSection('carreras')">Carreras de la Universidad Web</button>
+            <button onclick="scrollToSection('inscripciones')">Inscripciones y Pagos</button>
+            <button onclick="scrollToSection('formulario')">Formulario de Inscripción</button>
+            <button onclick="scrollToSection('contacto')">Contacto</button>
+        </div>
+        <!-- Aquí irá el resto de tu contenido -->
+    </body>
+    
+
+    <header>
+        <h1>BIENVENIDOS A LA UNIVERSIDAD WEB</h1>
+        <img src="images/universidad_portada.jpg" alt="Portada de la Universidad Web">
+    </header>
+
+    <section id="sobre-nosotros"> 
+        <button onclick="scrollToTop()" class="boton-volver">Volver al Inicio</button>
+        <h2>Sobre Nosotros</h2>
+        <p>
+            La Universidad Web fue fundada el 21 de marzo de 2004 y desde entonces ha formado 
+            miles de profesionales en diversas áreas del conocimiento. Nos especializamos en la 
+            educación virtual y presencial, ofreciendo programas académicos de alta calidad en 
+            Ingeniería, Ciencias de la Salud, Arquitectura, Matemáticas y Derecho.
+        </p>
+    </section>
+
+    <section id="carreras">
+        <button onclick="scrollToTop()" class="boton-volver">Volver al Inicio</button>
+        <h2>Carreras de la Universidad Web</h2>
+        <div class="carrera">
+            <img src="images/ingenieria_sistema.jpg" alt="Ingeniería en Sistemas">
+            <h3>Ingeniería en Sistemas</h3>
+            <button class="ver-mas">Conocer más</button>
+            <p class="descripcion oculto">
+                La carrera de Ingeniería en Sistemas está enfocada en la programación, 
+                el desarrollo de software y el mantenimiento de sistemas computacionales.
+            </p>
+        </div>
+        
+        <div class="carrera">
+            <img src="images/arquitectura.jpg" alt="Arquitectura">
+            <h3>Arquitectura</h3>
+            <button class="ver-mas">Conocer más</button>
+            <p class="descripcion oculto">
+                La Arquitectura combina creatividad y técnica para diseñar estructuras funcionales 
+                y estéticas. Nuestros egresados pueden desarrollar proyectos innovadores y sustentables.
+            </p>
+        </div>
+
+        <div class="carrera">
+            <img src="images/enfermeria.jpg" alt="Enfermería">
+            <h3>Enfermería</h3>
+            <button class="ver-mas">Conocer más</button>
+            <p class="descripcion oculto">
+                La Enfermería es una profesión clave en la atención médica. Los egresados 
+                se especializan en el cuidado de pacientes y la prevención de enfermedades.
+            </p>
+        </div>
+
+        <div class="career">
+            <img src="images/matematica.jpg" alt="Matemática">
+            <h3>Matemática</h3>
+            <p class="career-description hidden">La carrera de Matemática forma profesionales con habilidades en análisis, lógica y resolución de problemas complejos. Se especializan en modelado matemático, estadísticas y algoritmos aplicados a diversas industrias.</p>
+            <button class="show-more">Conocer más</button>
+        </div>
+        
+        <div class="career">
+            <img src="images/abogado.jpg" alt="Abogado">
+            <h3>Abogado</h3>
+            <p class="career-description hidden">La carrera de Derecho prepara profesionales en el área jurídica, capacitados para defender los derechos y garantizar la justicia. Los abogados trabajan en diferentes ramas como derecho penal, civil, corporativo y más.</p>
+            <button class="show-more">Conocer más</button>
+        </div>
+        
+    </section>
+
+    <section id="inscripciones">
+        <button onclick="scrollToTop()" class="boton-volver">Volver al Inicio</button>
+        <h2>Inscripción y Pagos</h2>
+        <p>📌 Inscripción: $1300</p>
+        <p>📌 Mensualidad: $4000</p>
+        <p>📌 Reinscripción: $2000</p>
+
+
+         <div id="formulario">
+            <button onclick="scrollToTop()" class="boton-volver">Volver al Inicio</button>  
+        </div>
+        <h3>Formulario de Inscripción</h3>
+        <form id="formulario-inscripcion">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="tipo">Tipo de Pago:</label>
+            <select id="tipo">
+                <option value="inscripcion">Inscripción</option>
+                <option value="mensualidad">Mensualidad</option>
+                <option value="reinscripcion">Reinscripción</option>
+            </select>
+
+            <button type="submit">Confirmar Pago</button>
+        </form>
+
+        <p id="mensaje-inscripcion" class="mensaje"></p>
+    </section>
+
+    <div id="contacto">
+        <button onclick="scrollToTop()" class="boton-volver">Volver al Inicio</button>
+    </div>
+
+    <footer>
+        <h3>Contacto</h3>
+        <p>📧 Correo: contacto@universidadweb.com</p>
+        <p>📞 Teléfono: +1 800 555 5555</p>
+        <p>📍 Dirección: Calle Ficticia 123, Ciudad Virtual</p>
+    </footer>
+
+   
+
+    <script>
+        // Función para desplazarse a una sección específica
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+
+<script>
+    // Función para desplazarse hacia el inicio de la página
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // El desplazamiento es suave
+        });
+    }
+</script>
+
+    
+
+</body>
+</html>
