@@ -94,3 +94,26 @@ footer {
     display: none;
 }
 
+/* Estilos generales (PC) */
+body {
+  font-size: 18px;
+  padding: 20px;
+}
+
+/* Para pantallas de 768px o menos (tablets y móviles) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
