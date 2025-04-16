@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (nombre && fecha) {
             mensaje.textContent = `✅ ${nombre}, estás inscrito correctamente en la opción de ${tipoPago}.`;
+            document.getElementById("formulario-inscripcion").reset();
         } else {
             mensaje.textContent = "❌ Por favor, completa todos los campos.";
         }
